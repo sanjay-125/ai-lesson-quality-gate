@@ -17,6 +17,9 @@ build/
 # Streamlit Local Cache
 .streamlit/
 
+# Internal Agent Skills
+.agents/
+
 # OS specific files
 .DS_Store
 Thumbs.db

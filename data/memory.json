@@ -1,6 +1,6 @@
 {
-  "total_runs": 5,
-  "successful_runs": 1,
+  "total_runs": 8,
+  "successful_runs": 4,
   "failed_runs": 4,
   "recurring_failures": {
     "Rubric 8": 1,
@@ -81,6 +81,36 @@
       "final_score": 11,
       "passed": true,
       "iterations": 2,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_175617",
+      "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+      "timestamp": "2026-11-13T17:56:17.498955",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 1,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_175905",
+      "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+      "timestamp": "2026-11-13T17:59:05.983956",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 2,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_181305",
+      "topic": "What is Fine-Tuning in AI?",
+      "timestamp": "2026-11-13T18:13:05.120464",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 3,
       "failed_rubrics": [],
       "rejection_reasons": []
     }
