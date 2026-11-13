@@ -126,11 +126,8 @@ def main():
             help="Type any technology or AI topic to generate and evaluate.",
         )
 
-        st.markdown("---")
-        st.subheader("🧪 Loom Demo Flaw Injection")
-        st.caption("Injects deliberate errors into Cycle 1 to showcase evaluator rejection live on camera:")
         flaw_choice = st.selectbox(
-            "Deliberate Flaw:",
+            "🧪 Loom Demo Flaw:",
             options=[
                 "None (Standard Generation)",
                 "unexplained_jargon (Cosine Similarity Jargon)",
@@ -138,20 +135,23 @@ def main():
                 "poor_chunking (120-word Run-on Paragraph)",
             ],
             index=0,
+            help="Injects deliberate errors into Cycle 1 to showcase evaluator rejection live on camera.",
         )
         if flaw_choice.startswith("None"):
             flaw = None
         else:
             flaw = flaw_choice.split()[0]
 
-        st.markdown("---")
-        st.caption("🔁 **Bounded Termination:** `Fixed Max 2 Retries` *(System Guarantee)*")
-        st.caption(f"🎯 **Approval Threshold:** `{APPROVAL_THRESHOLD}/11 Hard Checkpoints`")
-        st.caption(f"🤖 **Model Engine:** `{GROQ_MODEL}`")
-        st.caption("⚡ **Tier 1:** Local Deterministic (0 Token Cost)")
-        st.caption("🧠 **Tier 2:** Semantic Evaluation via Groq")
-
+        # Primary Call-To-Action: Placed immediately below inputs for zero-scroll access
         run_btn = st.button("🚀 Run Quality-Gate Generator", type="primary", width="stretch")
+
+        st.markdown("---")
+        with st.expander("ℹ️ System Architecture & Specs", expanded=False):
+            st.caption("🔁 **Bounded Termination:** `Fixed Max 2 Retries` *(System Guarantee)*")
+            st.caption(f"🎯 **Approval Threshold:** `{APPROVAL_THRESHOLD}/11 Hard Checkpoints`")
+            st.caption(f"🤖 **Model Engine:** `{GROQ_MODEL}`")
+            st.caption("⚡ **Tier 1:** Local Deterministic (0 Token Cost)")
+            st.caption("🧠 **Tier 2:** Semantic Evaluation via Groq")
 
     # Workflow Session State
     if "workflow_history" not in st.session_state:
