@@ -120,20 +120,11 @@ def main():
     with st.sidebar:
         st.header("⚙️ Quality-Gate Controls")
 
-        topic_presets = [
-            "Introduction to RAG (Retrieval-Augmented Generation)",
-            "Introduction to Large Language Models (LLMs)",
-            "What is Fine-Tuning in AI?",
-            "Introduction to Prompt Engineering",
-            "What are Vector Embeddings?",
-            "Custom Topic...",
-        ]
-
-        preset_choice = st.selectbox("📚 Select Topic Preset:", options=topic_presets, index=0)
-        if preset_choice == "Custom Topic...":
-            topic = st.text_input("Enter Custom Topic:", value="Introduction to RAG")
-        else:
-            topic = st.text_input("Active Topic:", value=preset_choice)
+        topic = st.text_input(
+            "📖 Lesson Topic:",
+            value="Introduction to RAG (Retrieval-Augmented Generation)",
+            help="Type any technology or AI topic to generate and evaluate.",
+        )
 
         st.markdown("---")
         st.subheader("🧪 Loom Demo Flaw Injection")
