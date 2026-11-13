@@ -144,11 +144,10 @@ def main():
         else:
             flaw = flaw_choice.split()[0]
 
-        retries = st.slider("Max Allowed Retries", min_value=1, max_value=3, value=MAX_RETRIES)
-
         st.markdown("---")
-        st.caption(f"🤖 **Model Engine:** `{GROQ_MODEL}`")
+        st.caption("🔁 **Bounded Termination:** `Fixed Max 2 Retries` *(System Guarantee)*")
         st.caption(f"🎯 **Approval Threshold:** `{APPROVAL_THRESHOLD}/11 Hard Checkpoints`")
+        st.caption(f"🤖 **Model Engine:** `{GROQ_MODEL}`")
         st.caption("⚡ **Tier 1:** Local Deterministic (0 Token Cost)")
         st.caption("🧠 **Tier 2:** Semantic Evaluation via Groq")
 
@@ -161,7 +160,7 @@ def main():
     # Workflow Execution
     if run_btn:
         with st.spinner("Executing agentic evaluation loop..."):
-            workflow = QualityGateWorkflow(topic=topic, max_retries=retries)
+            workflow = QualityGateWorkflow(topic=topic, max_retries=MAX_RETRIES)
             cycles_data = []
 
             prog_bar = st.progress(0, text="Step 1/4: Retrieving learned negative constraints from persistent memory...")
