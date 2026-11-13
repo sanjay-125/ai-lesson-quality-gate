@@ -26,6 +26,12 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Clean Minimalist Styling & Streamlit Chrome Removal */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display: none;}
+    footer {visibility: hidden;}
+
     /* Theme-Adaptive Gradient Title */
     .hero-title {
         background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
@@ -40,17 +46,22 @@ st.markdown(
         color: #94A3B8;
         font-size: 1.05rem;
         font-weight: 450;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.8rem;
     }
     .badge-pill {
         display: inline-block;
-        padding: 3px 10px;
+        padding: 4px 11px;
         border-radius: 9999px;
-        font-size: 0.75rem;
+        font-size: 0.76rem;
         font-weight: 700;
         letter-spacing: 0.4px;
-        text-transform: uppercase;
         margin-right: 6px;
+        margin-bottom: 6px;
+    }
+    .badge-persona {
+        background: rgba(148, 163, 184, 0.12);
+        color: #CBD5E1;
+        border: 1px solid rgba(148, 163, 184, 0.25);
     }
     .badge-deterministic {
         background: rgba(56, 189, 248, 0.15);
@@ -102,19 +113,22 @@ def get_rubric_tier(r_id: int) -> str:
 
 
 def main():
-    # Hero Banner
-    col_h1, col_h2 = st.columns([3.5, 1.2])
-    with col_h1:
-        st.markdown('<div class="hero-title">🛡️ AI Lesson Quality-Gate Engine</div>', unsafe_allow_html=True)
-        st.markdown(
-            '<div class="hero-subtitle">Autonomous Closed-Loop State Machine • Strict 11/11 Binary Gating • Indian Beginner Pedagogy</div>',
-            unsafe_allow_html=True,
-        )
-    with col_h2:
-        with st.container(border=True):
-            st.caption("🎯 **Target Persona:** Class 12 Pass-out")
-            st.caption("📚 **Vocabulary:** CEFR A2–B1 (No CS/Math)")
-            st.caption("🏬 **Analogy Anchor:** Everyday Indian Life")
+    # Clean Hero Header & Specification Badges
+    st.markdown('<div class="hero-title">🛡️ AI Lesson Quality-Gate Engine</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="hero-subtitle">Autonomous Closed-Loop State Machine • Strict 11/11 Hard Quality Gate</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        '<div style="margin-bottom: 1.4rem;">'
+        '<span class="badge-pill badge-persona">🇮🇳 Class 12 Indian Graduate</span>'
+        '<span class="badge-pill badge-persona">📖 CEFR A2–B1 Vocabulary</span>'
+        '<span class="badge-pill badge-persona">🏬 Everyday Indian Analogies</span>'
+        '<span class="badge-pill badge-deterministic">⚡ 4 Python Checks</span>'
+        '<span class="badge-pill badge-semantic">🧠 7 Groq Semantic Checks</span>'
+        '</div>',
+        unsafe_allow_html=True,
+    )
 
     # Sidebar Controls
     with st.sidebar:
@@ -204,14 +218,32 @@ def main():
 
     history = st.session_state.workflow_history
 
-    # Main Tabs
+    # Main Tabs - Crisp, clean labels
     tab_exec, tab_lesson, tab_rejections, tab_memory = st.tabs(
-        ["📊 Live Workflow Execution", "📄 Shippable Lesson", "📋 Rejection Audit Log", "🧠 Evolving Memory"]
+        ["⚡ Workflow", "📄 Shippable Lesson", "📋 Rejection Audit", "🧠 System Memory"]
     )
 
     with tab_exec:
         if not history:
-            st.info("👈 Select a topic in the sidebar and click **'🚀 Run Quality-Gate Generator'** to begin.")
+            with st.container(border=True):
+                st.markdown("### 🚀 Ready to Generate & Quality-Audit")
+                st.caption(
+                    "Configure your topic in the left sidebar and click **'🚀 Run Quality-Gate Generator'** to launch the autonomous state machine."
+                )
+
+                c1, c2, c3 = st.columns(3)
+                with c1:
+                    with st.container(border=True):
+                        st.markdown("#### 1. Ingestion & Scaffolding")
+                        st.caption("Pulls learned constraints from memory. Scaffolds content with familiar Indian analogies (kirana stores, open-book exams).")
+                with c2:
+                    with st.container(border=True):
+                        st.markdown("#### 2. Hybrid 11-Rubric Audit")
+                        st.caption("Runs 4 zero-token Python checks (FK Grade, Chunking, Active Voice, Contract) + 7 Groq LLM semantic checks.")
+                with c3:
+                    with st.container(border=True):
+                        st.markdown("#### 3. Bounded Self-Correction")
+                        st.caption("Feeds back failed evidence and surgically regenerates (max 2 retries) until clearing an uncompromising 11/11 bar.")
         else:
             # Banner
             if history["is_approved"]:
