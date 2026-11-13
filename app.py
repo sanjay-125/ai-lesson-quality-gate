@@ -27,11 +27,15 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Clean Minimalist Styling & Streamlit Chrome Removal */
+    /* Hide Deploy button and default menu, but keep sidebar controls 100% visible */
     #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
-    .stDeployButton {display: none;}
+    .stDeployButton {display: none !important;}
     footer {visibility: hidden;}
+    [data-testid="collapsedControl"] {
+        display: block !important;
+        visibility: visible !important;
+        z-index: 999999 !important;
+    }
 
     /* Theme-Adaptive Gradient Title */
     .hero-title {
