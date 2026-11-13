@@ -1,6 +1,6 @@
 {
-  "total_runs": 11,
-  "successful_runs": 7,
+  "total_runs": 14,
+  "successful_runs": 10,
   "failed_runs": 4,
   "recurring_failures": {
     "Rubric 8": 1,
@@ -138,6 +138,36 @@
       "run_id": "20261113_194739",
       "topic": "what is MCP?",
       "timestamp": "2026-11-13T19:47:39.426336",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 2,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_195521",
+      "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+      "timestamp": "2026-11-13T19:55:21.177780",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 1,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_195723",
+      "topic": "mcp?",
+      "timestamp": "2026-11-13T19:57:23.051482",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 1,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    },
+    {
+      "run_id": "20261113_200210",
+      "topic": "flow of  llm model",
+      "timestamp": "2026-11-13T20:02:10.785570",
       "final_score": 11,
       "passed": true,
       "iterations": 2,
