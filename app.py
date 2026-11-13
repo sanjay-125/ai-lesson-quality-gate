@@ -245,35 +245,45 @@ def main():
                         st.markdown("#### 3. Bounded Self-Correction")
                         st.caption("Feeds back failed evidence and surgically regenerates (max 2 retries) until clearing an uncompromising 11/11 bar.")
         else:
-            # Banner
+            # Pipeline Level Summary Ribbon (Non-clashing)
             if history["is_approved"]:
-                st.success(
-                    f"🎉 **APPROVED & CLEARED FOR SHIPPING!** Final Score: **{history['final_score']}/11** • Total Cycles: **{len(history['cycles'])}**"
+                st.markdown(
+                    f'<div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 8px; padding: 12px 18px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">'
+                    f'<span style="color: #34D399; font-weight: 700; font-size: 1rem;">🎉 FINAL PIPELINE RESULT: APPROVED & SHIPPED</span>'
+                    f'<span style="color: #CBD5E1; font-size: 0.9rem;">11/11 Bar Cleared in <b>{len(history["cycles"])} Cycles</b> • Final Score: <b style="color: #34D399;">11/11</b></span>'
+                    f'</div>',
+                    unsafe_allow_html=True,
                 )
             else:
-                st.error(
-                    f"⛔ **TERMINATED WITHOUT CLEARING QUALITY BAR:** Final Score: **{history['final_score']}/11** • Max Retries Exceeded"
+                st.markdown(
+                    f'<div style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 8px; padding: 12px 18px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">'
+                    f'<span style="color: #F87171; font-weight: 700; font-size: 1rem;">⛔ FINAL PIPELINE RESULT: TERMINATED</span>'
+                    f'<span style="color: #CBD5E1; font-size: 0.9rem;">Max Retries Exceeded • Final Score: <b style="color: #F87171;">{history["final_score"]}/11</b></span>'
+                    f'</div>',
+                    unsafe_allow_html=True,
                 )
 
-            # Cycle Tabs
-            cycle_tabs = st.tabs([f"Cycle {c['iteration']} ({c['score']}/11 - {'PASS' if c['passed'] else 'FAIL'})" for c in history["cycles"]])
+            # Chronological Cycle Tabs
+            cycle_tabs = st.tabs([
+                f"Cycle {c['iteration']}: {'REJECTED (Score: ' + str(c['score']) + '/11)' if not c['passed'] else 'APPROVED (Score: 11/11)'}"
+                for c in history["cycles"]
+            ])
 
             for i, c in enumerate(history["cycles"]):
                 with cycle_tabs[i]:
                     eval_out = c["evaluation"]
 
-                    # Top Metrics
-                    m1, m2, m3, m4 = st.columns(4)
+                    # 3 High-Contrast Metrics (Zero Truncation)
+                    m1, m2, m3 = st.columns(3)
                     with m1:
-                        st.metric("Total Score", f"{c['score']}/11")
+                        st.metric("Cycle Quality Score", f"{c['score']}/11")
                     with m2:
-                        st.metric("Quality Status", eval_out.overall_status)
+                        decision_label = "APPROVE & SHIP" if c["passed"] else "REJECT & REGENERATE"
+                        st.metric("Cycle Gate Decision", decision_label)
                     with m3:
-                        st.metric("Decision", eval_out.final_recommendation)
-                    with m4:
-                        st.metric("Approval Bar", "11/11 (Strict Binary)")
+                        st.metric("Passing Standard", "11/11 Strict Binary")
 
-                    # Critical Issues Banner if failed
+                    # Evaluator Rejection Notice if failed
                     if not c["passed"]:
                         with st.container(border=True):
                             st.markdown("#### ⛔ Evaluator Rejection Notice")
@@ -284,40 +294,60 @@ def main():
                                 for inst in eval_out.correction_instructions:
                                     st.markdown(f"- 🛠️ {inst}")
 
-                    st.markdown("### 📋 11-Rubric Quality Matrix")
+                    # Header with Filter Segmented Control
+                    col_t1, col_t2 = st.columns([2.6, 1.4])
+                    failed_count = sum(1 for r in eval_out.rubric_results if r.score == 0)
+                    passed_count = sum(1 for r in eval_out.rubric_results if r.score == 1)
 
-                    # 2-Column Rubric Matrix Cards
-                    col_left, col_right = st.columns(2)
-                    for idx, r in enumerate(eval_out.rubric_results):
-                        target_col = col_left if idx % 2 == 0 else col_right
-                        with target_col:
-                            with st.container(border=True):
-                                # Rubric Header with Badges
-                                is_pass = r.score == 1
-                                tier_badge = "badge-deterministic" if r.rubric_id in DETERMINISTIC_RUBRICS else "badge-semantic"
-                                tier_label = "Deterministic" if r.rubric_id in DETERMINISTIC_RUBRICS else "Semantic"
-                                pass_badge = "badge-pass" if is_pass else "badge-fail"
-                                pass_label = "PASS (1/1)" if is_pass else "FAIL (0/1)"
+                    with col_t1:
+                        st.markdown("### 📋 CI/CD Quality-Gate Checklist")
+                    with col_t2:
+                        filter_mode = st.segmented_control(
+                            "Filter Rubrics:",
+                            options=[
+                                f"All ({len(eval_out.rubric_results)})",
+                                f"Failed ({failed_count})",
+                                f"Passed ({passed_count})",
+                            ],
+                            default=f"All ({len(eval_out.rubric_results)})",
+                            label_visibility="collapsed",
+                            key=f"filter_cycle_{c['iteration']}",
+                        )
 
-                                st.markdown(
-                                    f'<div>'
-                                    f'<span class="badge-pill {pass_badge}">{pass_label}</span>'
-                                    f'<span class="badge-pill {tier_badge}">{tier_label}</span>'
-                                    f'<strong>R{r.rubric_id}: {r.rubric_name}</strong>'
-                                    f'</div>',
-                                    unsafe_allow_html=True,
+                    # Filter Rubrics
+                    display_rubrics = eval_out.rubric_results
+                    if "Failed" in str(filter_mode):
+                        display_rubrics = [r for r in display_rubrics if r.score == 0]
+                    elif "Passed" in str(filter_mode):
+                        display_rubrics = [r for r in display_rubrics if r.score == 1]
+
+                    # Sleek Full-Width Symmetrical Checklist
+                    if not display_rubrics:
+                        st.info("No rubrics match the active filter.")
+
+                    for r in display_rubrics:
+                        is_pass = r.score == 1
+                        tier_label = "Deterministic (Python)" if r.rubric_id in DETERMINISTIC_RUBRICS else "Semantic (Groq)"
+                        tier_badge = "badge-deterministic" if r.rubric_id in DETERMINISTIC_RUBRICS else "badge-semantic"
+                        pass_badge = "badge-pass" if is_pass else "badge-fail"
+                        pass_label = "PASS (1/1)" if is_pass else "FAIL (0/1)"
+
+                        with st.container(border=True):
+                            st.markdown(
+                                f'<div>'
+                                f'<span class="badge-pill {pass_badge}">{pass_label}</span>'
+                                f'<span class="badge-pill {tier_badge}">{tier_label}</span>'
+                                f'<strong>R{r.rubric_id}: {r.rubric_name}</strong>'
+                                f'</div>',
+                                unsafe_allow_html=True,
+                            )
+                            st.markdown(f'<div class="quote-box">"{r.evidence}"</div>', unsafe_allow_html=True)
+
+                            if not is_pass:
+                                st.error(
+                                    f"❌ **Failure Reason:** {r.failure_reason}\n\n"
+                                    f"🛠️ **Surgical Fix Required:** {r.suggested_fix}"
                                 )
-
-                                # Quoted Evidence
-                                st.markdown('<div class="evidence-label">Quoted Evidence / Rationale:</div>', unsafe_allow_html=True)
-                                st.markdown(f'<div class="quote-box">"{r.evidence}"</div>', unsafe_allow_html=True)
-
-                                # Failure Details
-                                if not is_pass:
-                                    if r.failure_reason:
-                                        st.error(f"**Failure Reason:** {r.failure_reason}")
-                                    if r.suggested_fix:
-                                        st.info(f"**Action Required:** {r.suggested_fix}")
 
                     # Collapsible Snapshot
                     st.markdown("---")
