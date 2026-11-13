@@ -1,0 +1,15 @@
+{
+  "run_id": "20261113_145753",
+  "topic": "Introduction to RAG",
+  "timestamp": "2026-11-13T14:57:53.486118",
+  "final_score": 10,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Zero Unexplained Technical Jargon"
+  ],
+  "rejection_reasons": [
+    "Rubric 3 (Zero Unexplained Technical Jargon): Term 'LLMs' used without immediate plain English definition."
+  ],
+  "lesson_markdown": "# Introduction to RAG\n\n## 1. Mental Experiment: Imagine This...\nYou ask a chatbot about your school\u2019s fee structure. The bot gives a generic answer. It does not know your specific school rules. You feel frustrated.\n\n## 2. What is RAG?\nRAG stands for Retrieval-Augmented Generation. \"Retrieval\" means finding facts. \"Generation\" means writing the answer. It helps AI find facts first. Then, it writes an answer.\n\n## 3. Why Does It Matter?\nLarge Language Models (LLMs) are AI that predict the next word. They often guess. This is called \"hallucination.\" RAG stops this guessing. It uses real documents.\n\n## 4. How Does It Work?\nFirst, the AI searches your documents. It finds the most relevant parts. Second, it reads these specific facts.\n\nThird, it combines the facts with its language skills. It creates a final, clear answer. This process ensures accuracy.\n\n## 5. Everyday Indian Analogy\nThink of a kirana store owner. He knows general prices. But for a specific customer, he checks his stock ledger.\n\nHe looks at the exact entry for that item. Then, he gives the right price. RAG is like that owner checking the ledger.\n\n## 6. Real-World Use Case in Action\nA bank customer asks, \"What is my loan interest rate?\" The AI searches the customer\u2019s contract. It finds the exact rate.\n\nIt answers with the correct number. The customer trusts the bank. This builds confidence in the service.\n\n## 7. Key Takeaways\n*   RAG stands for Retrieval-Augmented Generation.\n*   It helps AI find facts before answering.\n*   It reduces wrong or made-up answers.\n*   It uses specific documents for accuracy.\n\n## 8. Test Your Knowledge\n**Question 1:** What is the main job of the \"Retrieval\" part in RAG?\nA) To write a long story\nB) To find relevant information from documents\n**Answer:** B \u2013 Retrieval means searching for the right facts in your data before the AI writes the answer.\n\n**Question 2:** You have a PDF of your railway ticket rules. You ask the AI, \"Can I change my seat?\" How does RAG help?\nA) It guesses based on general knowledge\nB) It searches the PDF for the seat change rule\n**Answer:** B \u2013 RAG looks at your specific document (the PDF) to find the exact rule, ensuring the answer is correct for your ticket."
+}

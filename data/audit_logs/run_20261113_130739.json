@@ -1,0 +1,22 @@
+{
+  "run_id": "20261113_130739",
+  "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+  "timestamp": "2026-11-13T13:07:39.928217",
+  "final_score": 8,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Target Persona & Vocabulary",
+    "Zero Unexplained Technical Jargon",
+    "Structured Output & Content Contract"
+  ],
+  "rejection_reasons": [
+    "Rubric 1: Vocabulary too complex for target learner.",
+    "Rubric 3: Unexplained term \"NCERT\".",
+    "Rubric 11: Missing required content contract sections.",
+    "Rubric 1 (Target Persona & Vocabulary): Flesch-Kincaid Grade Level 7.2 exceeds the ceiling of 7.0.",
+    "Rubric 3 (Zero Unexplained Technical Jargon): The term \"NCERT\" appears without any explanation.",
+    "Rubric 11 (Structured Output & Content Contract): Missing mandatory sections: Exactly Two Quiz Questions with Options and Explanations."
+  ],
+  "lesson_markdown": "# Introduction to Retrieval\u2011Augmented Generation (RAG)\n\n## 1. Mental Experiment: Imagine This...\nYou walk into a kirana shop for a packet of turmeric.  \nThe shopkeeper does not remember the brand.  \nHe opens his old ledger, finds the exact entry, and tells you the brand.\n\n## 2. What is Retrieval\u2011Augmented Generation?\n**AI (Artificial Intelligence)** is a computer program that can read and write language.  \n**Retrieval\u2011Augmented Generation (RAG)** is an AI method that first **retrieves** (searches) information from a **database** (a place where many documents are stored) and then **generates** (writes) a reply in plain words.  \n**Hallucination** means the AI makes up facts that are not true.  \n**Grounding** means the answer is tied to real data from the database, so it is trustworthy.\n\n## 3. Why Does It Matter?\nA plain AI may hallucinate and give wrong answers.  \nRAG reduces hallucination by grounding the reply in real documents.  \nGrounded answers are safer for exams, chats, and research.\n\n## 4. How Does It Work?\n1. **Ask** \u2013 you type a question.  \n2. **Search** \u2013 the system looks in the database for the most relevant text.  \n3. **Answer** \u2013 the AI reads that text and writes a clear reply.\n\n## 5. Everyday Indian Analogy\nThink of a doctor who first checks a patient\u2019s old health record (retrieval) and then explains the treatment plan (generation).  \nThe doctor never gives advice without looking at the record, just as RAG never answers without searching first.\n\n## 6. Real\u2011World Use Case in Action\nA student opens a study app that holds all NCERT books.  \nThe student asks, \u201cExplain photosynthesis in simple words.\u201d  \nThe app fetches the exact paragraph from the textbook (retrieval) and rewrites it in easy language (generation).  \nBecause the answer comes from the textbook, it is accurate.\n\n## 7. Key Takeaways\n- RAG = Retrieval (search) + Generation (write).  \n- Retrieval finds real facts; Generation creates a readable reply.  \n- The three steps are: ask, search, answer.  \n- Grounded answers avoid hallucinations and are more reliable.\n\n## 8. Test Your Knowledge\n**1. Which part of RAG finds the needed information?**  \n\nA. Generation  \nB. Retrieval  \nC. Translation  \n\n**Answer:** B. Retrieval \u2013 it searches the database for relevant text.  \n\n**Explanation:** Retrieval is the step that looks for the right document before any answer is written.\n\n---\n\n**2. A railway reservation chatbot uses RAG. A user asks, \u201cIs there a seat available on Train 123 tomorrow?\u201d How does RAG help the chatbot give a correct reply?**  \n\nA. It guesses based on past chats.  \nB. It looks up the live train database, then writes the answer.  \nC. It asks the user to call the station.  \n\n**Answer:** B. It looks up the live train database, then writes the answer.  \n\n**Explanation:** The chatbot first retrieves the current seat status (search) and then generates a clear response, ensuring the reply is based on real data."
+}

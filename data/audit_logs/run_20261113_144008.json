@@ -1,0 +1,15 @@
+{
+  "run_id": "20261113_144008",
+  "topic": "Introduction to RAG",
+  "timestamp": "2026-11-13T14:40:08.389062",
+  "final_score": 10,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Rubric 10"
+  ],
+  "rejection_reasons": [
+    "Rubric 10 (Rubric 10): Rubric was not evaluated by model"
+  ],
+  "lesson_markdown": "# Introduction to RAG\n\n## 1. Mental Experiment: Imagine This...\nYou ask a friend for a recipe. He guesses the ingredients. He might be wrong. You feel confused. You want accurate facts, not guesses.\n\n## 2. What is RAG?\nRAG stands for Retrieval-Augmented Generation. It is a method for AI. AI is a computer program that mimics human thinking. RAG helps AI find facts first. Then, it writes an answer. The AI does not just guess. It looks up information. This makes answers more true.\n\n## 3. Why Does It Matter?\nLarge Language Models (LLMs) are like smart students. LLMs are AI systems trained on huge amounts of text. They know a lot. But they sometimes make up facts. This is called \"hallucination.\" RAG fixes this problem. It gives the AI a book to check. Now, the AI answers with proof.\n\n## 4. How Does It Work?\nFirst, the AI reads your question. Second, it searches a database. A database is a digital library of organized data. It finds the right document. Third, the AI reads that document. It uses the text to build an answer. The answer is now based on real data.\n\n## 5. Everyday Indian Analogy\nThink of an open-book exam. You are a student. You do not memorize everything. You look up the page. You read the exact line. Then, you write the answer. RAG works the same way. The AI opens the \"book\" (database). It finds the right page. It writes the answer from that page.\n\n## 6. Real-World Use Case in Action\nImagine a bank customer service chatbot. You ask about loan interest rates. The AI searches the bank\u2019s latest policy PDF. It finds the current rate. It tells you the exact number. It does not guess an old rate. This saves the bank money. It also helps you trust the answer.\n\n## 7. Key Takeaways\n*   RAG stands for Retrieval-Augmented Generation.\n*   It helps AI find facts before answering.\n*   It reduces \"hallucinations\" or made-up facts.\n*   It works like an open-book exam.\n*   It uses a database as its source of truth.\n\n## 8. Test Your Knowledge\n\n**Question 1:** What does RAG stand for?\nA) Rapid Answer Generation\nB) Retrieval-Augmented Generation\n**Answer:** B \u2013 RAG stands for Retrieval-Augmented Generation. It means the AI retrieves information first, then generates an answer.\n\n**Question 2:** You ask an AI about your company's new leave policy. Which method gives the most accurate answer?\nA) The AI guesses based on general knowledge.\nB) The AI searches the company's policy document first.\n**Answer:** B \u2013 Searching the specific document ensures the answer matches your company's actual rules. This is how RAG works."
+}

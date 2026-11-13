@@ -1,0 +1,25 @@
+{
+  "run_id": "20261113_142209",
+  "topic": "Introduction to RAG",
+  "timestamp": "2026-11-13T14:22:09.358313",
+  "final_score": 7,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Zero Unexplained Technical Jargon",
+    "Coherent Flow & Micro-Check",
+    "Concept-to-Application Transfer",
+    "Structured Output & Content Contract"
+  ],
+  "rejection_reasons": [
+    "Missing explanations for technical term NEET (Rubric 3).",
+    "Absence of required quiz/self\u2011check questions (Rubric 6).",
+    "No application\u2011oriented learner question (Rubric 10).",
+    "Content contract not fulfilled \u2013 missing \"Two Quiz Questions\" section (Rubric 11).",
+    "Rubric 3 (Zero Unexplained Technical Jargon): The term \"NEET\" (an Indian entrance exam) appears without any explanation.",
+    "Rubric 6 (Coherent Flow & Micro-Check): No self\u2011check (quiz) questions with answers and explanations are provided; the required two questions are missing.",
+    "Rubric 10 (Concept-to-Application Transfer): The lesson does not include an application question that asks the learner to apply the concept themselves.",
+    "Rubric 11 (Structured Output & Content Contract): Missing mandatory sections: Two Quiz Questions."
+  ],
+  "lesson_markdown": "# Introduction to Retrieval\u2011Augmented Generation (RAG)\n\n## 1. Mental Experiment: Imagine This...\nYou walk into a kirana shop looking for a rare spice.  \nThe shopkeeper does not keep every spice on the shelf.  \nHe quickly opens his notebook to find where the spice is stored.  \nThen he brings you the exact packet you need.  \n\n## 2. What is RAG?\nRAG stands for Retrieval\u2011Augmented Generation.  \nRetrieval means finding useful information from a source.  \nGeneration means writing a new answer using that information.  \nRAG links these two steps so a computer can give fresh, correct replies.  \n\n## 3. Why Does It Matter?\nA plain LLM (Large Language Model \u2013 a smart text\u2011writing program) only knows what it learned before.  \nIt may miss recent facts or specific details.  \nRAG lets the LLM fetch the latest data before answering.  \nThis makes the answer more accurate and up\u2011to\u2011date.  \n\n## 4. How Does It Work?\nFirst, the computer turns each document into a vector \u2013 a simple list of numbers.  \nA vector embedding is the process of changing words into those number lists.  \nTo compare two vectors, the system uses cosine similarity, a quick way to see how close the lists are.  \nAll vectors live in a hidden latent space, which is just a place where the numbers are stored.  \nThe system approximates the math so it can compare many vectors fast.  \n\n**Simple 3\u2011step breakdown**\n\n1. **Ask** \u2013 You type a question into the system.  \n\n2. **Search** \u2013 The system calls an API.  \n   An API (Application Programming Interface) is a digital bridge that lets programs talk.  \n   It looks for the most similar vectors.  \n   It then fetches the matching documents.  \n\n3. **Answer** \u2013 The LLM reads the retrieved documents and writes a clear response.  \n\n## 5. Everyday Indian Analogy\nThink of a village doctor.  \nYou tell the doctor your symptoms (ask).  \nHe flips through his medical handbook (search via API).  \nThen he explains the treatment in simple words (generate answer).  \n\n## 6. Real\u2011World Use Case in Action\nA student uses a study app for the NEET exam.  \nThe app first pulls the latest syllabus from the education board (retrieval).  \nThen it creates short notes that match the student\u2019s query (generation).  \nThe student receives up\u2011to\u2011date, easy\u2011to\u2011read material.  \n\n## 7. Key Takeaways\n- RAG = Retrieval + Generation.  \n- Retrieval finds current information; Generation writes the answer.  \n- A"
+}

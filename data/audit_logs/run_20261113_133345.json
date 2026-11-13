@@ -1,0 +1,19 @@
+{
+  "run_id": "20261113_133345",
+  "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+  "timestamp": "2026-11-13T13:33:45.620239",
+  "final_score": 9,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Target Persona & Vocabulary",
+    "Structured Output & Content Contract"
+  ],
+  "rejection_reasons": [
+    "Rubric 1: Language complexity exceeds target A2\u2011B1 level.",
+    "Rubric 11: Missing required contract heading for quiz questions.",
+    "Rubric 1 (Target Persona & Vocabulary): Flesch-Kincaid Grade Level 7.2 exceeds the ceiling of 7.0.",
+    "Rubric 11 (Structured Output & Content Contract): Missing mandatory sections: Exactly Two Quiz Questions with Options and Explanations."
+  ],
+  "lesson_markdown": "# Lesson Title  \n**Introduction to Retrieval\u2011Augmented Generation (RAG)**  \n\n## Lesson Metadata  \n- **Estimated time:** 8\u202fminutes  \n- **Learning objectives:**  \n  1. Explain what Retrieval\u2011Augmented Generation means.  \n  2. Describe why RAG improves answer quality.  \n  3. Outline the three basic steps of a RAG system.  \n\n## 1. Mental Experiment: Imagine This...  \nYou walk into a kirana shop looking for a rare spice.  \nThe shopkeeper first checks his shelf, then writes a quick recipe using that spice.  \nYou get a tasty dish without waiting for a new delivery.  \n\n## 2. What is RAG?  \nRAG stands for **Retrieval\u2011Augmented Generation**.  \n*Retrieval* means searching a large collection for the right facts, like looking up a book in a library.  \n*Generation* means creating a new sentence or answer using those facts, similar to a writer drafting a paragraph.  \n\n## 3. Why Does It Matter?  \nA plain text\u2011writing program may guess facts and sometimes be wrong.  \nRAG checks real data first, so the answer is more correct.  \nAccurate answers build trust, especially for fast\u2011changing topics.  \n\n## 4. How Does It Work?  \n1. **Search** \u2013 The system sends your question to a knowledge store (books, web pages, or a list).  \n2. **Fetch** \u2013 It pulls the most useful pieces of text, called *documents*.  \n3. **Write** \u2013 An **LLM** (large language model, a computer program that can write text) reads those documents and creates the final reply.  \n\n## 5. Everyday Indian Analogy  \nThink of a doctor who first looks at a patient\u2019s old reports (retrieval) and then prescribes medicine (generation).  \nThe advice is safer because it is based on real history.  \n\n## 6. Real\u2011World Use Case in Action  \nA student asks a chatbot for the latest COVID\u201119 guidelines.  \nThe bot searches the health\u2011ministry website, pulls the newest rules, and then writes a clear answer.  \nThe student receives correct, up\u2011to\u2011date information instantly.  \n\n## 7. Key Takeaways  \n- RAG = Retrieval + Generation.  \n- Retrieval finds real facts; Generation writes a readable answer.  \n- Combining them makes answers more accurate.  \n- Chatbots and search assistants often use RAG.  \n\n## 8. Test Your Knowledge  \n\n**1. Which part of RAG finds the needed information?**  \n\na. Generation  \nb. Retrieval  \nc. Translation  \nd. Compression  \n\n**Explanation:** Retrieval is the step that searches and fetches the relevant documents.  \n\n**2. You want a travel bot to give the exact train schedule for a specific date. How should RAG help?**  \n\na. The bot should generate a schedule from memory.  \nb. The bot should retrieve the latest schedule from the railway website, then write the answer.  \nc. The bot should ask the user to call the station.  \nd. The bot should guess the schedule based on past data.  \n\n**Explanation:** Option (b) is correct. Retrieval gets the current schedule, and Generation writes it in a friendly way, ensuring the answer is up\u2011to\u2011date."
+}

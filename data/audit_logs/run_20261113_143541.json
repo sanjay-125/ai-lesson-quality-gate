@@ -1,0 +1,17 @@
+{
+  "run_id": "20261113_143541",
+  "topic": "Introduction to RAG",
+  "timestamp": "2026-11-13T14:35:41.386534",
+  "final_score": 9,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Rubric 8",
+    "Rubric 10"
+  ],
+  "rejection_reasons": [
+    "Rubric 8 (Rubric 8): Rubric was not evaluated by model",
+    "Rubric 10 (Rubric 10): Rubric was not evaluated by model"
+  ],
+  "lesson_markdown": "# Introduction to RAG\n\n## 1. Mental Experiment: Imagine This...\n\nYou ask a friend for directions to a new park. He guesses the route. He might be wrong.\n\nNow, imagine he checks a map first. He gives you the correct path. This is much better.\n\n## 2. What is RAG?\n\nRAG stands for Retrieval-Augmented Generation. \"Retrieval\" means finding information. \"Augmented\" means making the answer stronger.\n\nIt helps Artificial Intelligence (a computer program that acts like a human brain) answer questions accurately. It combines two parts. First, it finds facts. Second, it writes the answer.\n\n## 3. Why Does It Matter?\n\nAI models can make up false facts. This is called \"hallucination.\"\n\nRAG fixes this problem. It uses real data. You get trustworthy answers.\n\n## 4. How Does It Work?\n\nStep 1: You ask a question. The system searches your documents.\n\nStep 2: It finds relevant snippets. A snippet is a small piece of text. These are your \"retrieved\" facts.\n\nStep 3: The AI writes a final answer. It uses only those found facts.\n\n## 5. Everyday Indian Analogy\n\nThink of a student in an open-book exam. The student does not memorize everything.\n\nThey look up the exact page in their textbook. They copy the correct answer.\n\nRAG is like that student. It looks up the truth before speaking.\n\n## 6. Real-World Use Case in Action\n\nA bank customer asks, \"What is my loan interest rate?\"\n\nThe AI searches the customer\u2019s specific file. It finds the exact rate.\n\nIt answers, \"Your rate is 8.5%.\" It does not guess.\n\n## 7. Key Takeaways\n\n*   RAG stands for Retrieval-Augmented Generation.\n*   It reduces AI hallucinations (false facts).\n*   It searches documents before answering.\n*   It provides accurate, source-based responses.\n\n## 8. Test Your Knowledge\n\n**Question 1:** What is the main benefit of using RAG?\nA) It makes the AI speak faster\nB) It helps the AI find facts before answering\n\n**Answer:** B \u2013 RAG retrieves specific information from documents. This ensures the AI answers based on real data, not guesses.\n\n**Question 2:** You have a company policy PDF (a digital document file). You ask the AI, \"What is the leave policy?\" How does RAG help?\nA) It remembers the policy from its training data\nB) It searches the PDF for the leave section\n\n**Answer:** B \u2013 RAG looks inside the specific PDF you provide. It finds the exact text about leave and uses that to answer you."
+}

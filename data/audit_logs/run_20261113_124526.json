@@ -1,0 +1,16 @@
+{
+  "run_id": "20261113_124526",
+  "topic": "Introduction to RAG",
+  "timestamp": "2026-11-13T12:45:26.277551",
+  "final_score": 10,
+  "passed": false,
+  "iterations": 3,
+  "failed_rubrics": [
+    "Bite-Sized Chunking & Cognitive Load"
+  ],
+  "rejection_reasons": [
+    "Paragraph length exceeds allowed limit, causing high cognitive load (Rubric 7).",
+    "Rubric 7 (Bite-Sized Chunking & Cognitive Load): Found 2 cognitive load chunking violations."
+  ],
+  "lesson_markdown": "# Lesson Title  \n**Introduction to Retrieval\u2011Augmented Generation (RAG)**  \n\n## 1. Mental Experiment: Imagine This...  \nYou walk into a kirana shop looking for a rare spice.  \nThe shopkeeper does not remember the price.  \nHe quickly checks his shelf\u2011list and tells you the exact cost.  \n\n## 2. What is RAG?  \nRAG stands for **Retrieval\u2011Augmented Generation**.  \nIt lets a computer first **retrieve** (find) facts and then **generate** (write) an answer.  \n**Retrieval** means searching a stored collection of information.  \n\n**Generation** means using a text\u2011writing program to create a reply.  \nA **Large Language Model (LLM)** is that text\u2011writing program; it writes sentences like a human.  \nAn **Application Programming Interface (API)** is a connector that lets two software pieces talk to each other.  \n\n## 3. Why Does It Matter?  \nA plain LLM sometimes makes up facts that are wrong.  \nAdding a retrieval step gives the LLM real, up\u2011to\u2011date data.  \nThis makes the answer more trustworthy.  \n\n## 4. How Does It Work?  \n1. **Ask a question** \u2013 you type a query into the system.  \n2. **Search the knowledge base** \u2013 the system looks in a knowledge base (a collection of stored information) for the most relevant facts.  \n3. **Create the answer** \u2013 the LLM writes a reply using the facts it just found.  \n\n## 5. Everyday Indian Analogy  \nThink of a doctor who first opens a patient\u2019s old reports (retrieval) and then decides the medicine (generation).  \nThe doctor does not rely only on memory.  \n\n## 6. Real\u2011World Use Case in Action  \nA student uses a study app that holds many textbook PDFs.  \nWhen the student asks, \u201cExplain photosynthesis simply,\u201d the app first pulls the right pages and then the LLM writes a short, clear answer.  \n\n## 7. Key Takeaways  \n- RAG = Retrieval\u2011Augmented Generation.  \n- Retrieval finds real facts; generation writes the answer.  \n- LLM = smart text\u2011writer; API = software connector.  \n- The method makes AI replies more accurate and current.  \n\n## 8. Test Your Knowledge  \n\n**Q1. Which step in RAG looks for the needed facts?**  \nA. Generation  \nB. Retrieval  \nC. Translation  \n\n**Answer:** B \u2013 Retrieval searches the knowledge base for relevant information before the answer is written.  \n\n**Q2. You are building a train\u2011schedule bot. Which RAG step should fetch the latest timings from the railway website?**  \nA. Generation \u2013 let the LLM guess the timings.  \nB. Retrieval \u2013 call the railway API to get current schedules.  \nC. Both steps are unnecessary.  \n\n**Answer:** B \u2013 Retrieval uses the railway API to pull the latest schedule, then the LLM generates a correct reply."
+}

@@ -1,0 +1,88 @@
+{
+  "total_runs": 5,
+  "successful_runs": 1,
+  "failed_runs": 4,
+  "recurring_failures": {
+    "Rubric 8": 1,
+    "Rubric 10": 2,
+    "Coherent Flow & Micro-Check": 1,
+    "Zero Unexplained Technical Jargon": 1
+  },
+  "learned_negative_constraints": [
+    "Always define abbreviations like RAG, LLM, API on first mention.",
+    "Never use academic phrases without simple everyday analogies.",
+    "Keep every paragraph strictly under 4 sentences and 60 words.",
+    "Format Section 8 with exactly two questions numbered **Question 1:** and **Question 2:**.",
+    "Strict Warning: Past evaluations frequently failed on 'Rubric 10'. Ensure strict compliance."
+  ],
+  "history": [
+    {
+      "run_id": "20261113_143541",
+      "topic": "Introduction to RAG",
+      "timestamp": "2026-11-13T14:35:41.386534",
+      "final_score": 9,
+      "passed": false,
+      "iterations": 3,
+      "failed_rubrics": [
+        "Rubric 8",
+        "Rubric 10"
+      ],
+      "rejection_reasons": [
+        "Rubric 8 (Rubric 8): Rubric was not evaluated by model",
+        "Rubric 10 (Rubric 10): Rubric was not evaluated by model"
+      ]
+    },
+    {
+      "run_id": "20261113_144008",
+      "topic": "Introduction to RAG",
+      "timestamp": "2026-11-13T14:40:08.389062",
+      "final_score": 10,
+      "passed": false,
+      "iterations": 3,
+      "failed_rubrics": [
+        "Rubric 10"
+      ],
+      "rejection_reasons": [
+        "Rubric 10 (Rubric 10): Rubric was not evaluated by model"
+      ]
+    },
+    {
+      "run_id": "20261113_145218",
+      "topic": "Introduction to RAG",
+      "timestamp": "2026-11-13T14:52:18.649370",
+      "final_score": 10,
+      "passed": false,
+      "iterations": 3,
+      "failed_rubrics": [
+        "Coherent Flow & Micro-Check"
+      ],
+      "rejection_reasons": [
+        "Rubric 6 (Coherent Flow & Micro-Check): Quiz questions test recall, not reasoning or application."
+      ]
+    },
+    {
+      "run_id": "20261113_145753",
+      "topic": "Introduction to RAG",
+      "timestamp": "2026-11-13T14:57:53.486118",
+      "final_score": 10,
+      "passed": false,
+      "iterations": 3,
+      "failed_rubrics": [
+        "Zero Unexplained Technical Jargon"
+      ],
+      "rejection_reasons": [
+        "Rubric 3 (Zero Unexplained Technical Jargon): Term 'LLMs' used without immediate plain English definition."
+      ]
+    },
+    {
+      "run_id": "20261113_150713",
+      "topic": "Introduction to RAG",
+      "timestamp": "2026-11-13T15:07:13.510818",
+      "final_score": 11,
+      "passed": true,
+      "iterations": 2,
+      "failed_rubrics": [],
+      "rejection_reasons": []
+    }
+  ]
+}
