@@ -211,4 +211,4 @@ python cli.py --flaw unexplained_jargon
 ## 📄 Deliverable Links
 - **Final Approved Lesson Content**: [final_output/RAG_Lesson.md](final_output/RAG_Lesson.md)
 - **Rejection & Revision Audit Log**: [final_output/Rejection_Log.md](final_output/Rejection_Log.md)
-- **15–20 Min Loom Video Script**: [docs/LOOM_DEMO_SCRIPT.md](docs/LOOM_DEMO_SCRIPT.md)
+
